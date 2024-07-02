@@ -10,30 +10,35 @@ source:
   sha256: ed7d092c72fad9f6f839e1501229490cb278403ae95529a02860f3012f02bc0a
 
 build:
-  noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
+  skip: True  # [py<36]
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python
     - setuptools
+    - wheel
 
   run:
-    - python >=3.6
+    - python
     - requests >=1.1.0
     - future
     - setuptools
 
 test:
+  source_files:
+    - census/tests
   imports:
     - census
     - census.tests
   commands:
     - pip check
+    - pytest -v .
   requires:
     - pip
+    - pytest
 
 about:
   home: http://github.com/sunlightlabs/census
