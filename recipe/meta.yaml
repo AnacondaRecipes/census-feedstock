@@ -39,7 +39,7 @@ test:
     - pytest
 
 about:
-  home: http://github.com/sunlightlabs/census
+  home: https://github.com/sunlightlabs/census
   license_file: LICENSE
   license: BSD-3-Clause
   license_family: BSD
