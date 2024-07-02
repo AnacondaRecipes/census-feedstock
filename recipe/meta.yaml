@@ -39,7 +39,7 @@ test:
     - pytest
 
 about:
-  home: https://github.com/sunlightlabs/census
+  home: https://github.com/datamade/census
   license_file: LICENSE
   license: BSD-3-Clause
   license_family: BSD
@@ -47,7 +47,7 @@ about:
   description: |
     A simple wrapper for the United States Census Bureau's API.
     Provides access to ACS and SF1 data sets.
-  dev_url: http://github.com/sunlightlabs/census
+  dev_url: https://github.com/datamade/census
   doc_url: https://github.com/datamade/census/blob/master/README.rst
 
 extra:
