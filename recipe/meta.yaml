@@ -33,7 +33,7 @@ test:
     - census.tests
   commands:
     - pip check
-    - pytest -v . -k "(test_acs1dp)"
+    - pytest -v . -k "test_la_canada_2015"
   requires:
     - pip
     - pytest
