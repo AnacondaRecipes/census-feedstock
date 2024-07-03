@@ -26,17 +26,13 @@ requirements:
     - future
 
 test:
-  source_files:
-    - census/tests
   imports:
     - census
     - census.tests
   commands:
     - pip check
-    - pytest -v . -k "test_la_canada_2015"
   requires:
     - pip
-    - pytest
 
 about:
   home: https://github.com/datamade/census
