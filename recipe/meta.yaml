@@ -10,21 +10,20 @@ source:
   sha256: ed7d092c72fad9f6f839e1501229490cb278403ae95529a02860f3012f02bc0a
 
 build:
-  noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  skip: True  # [py<36]
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python
     - setuptools
-
+    - wheel
   run:
-    - python >=3.6
+    - python
     - requests >=1.1.0
     - future
-    - setuptools
 
 test:
   imports:
@@ -36,12 +35,16 @@ test:
     - pip
 
 about:
-  home: http://github.com/sunlightlabs/census
+  home: https://github.com/datamade/census
   license_file: LICENSE
   license: BSD-3-Clause
   license_family: BSD
   summary: A wrapper for the US Census Bureau's API
-  dev_url: http://github.com/sunlightlabs/census
+  description: |
+    A simple wrapper for the United States Census Bureau's API.
+    Provides access to ACS and SF1 data sets.
+  dev_url: https://github.com/datamade/census
+  doc_url: https://github.com/datamade/census/blob/master/README.rst
 
 extra:
   recipe-maintainers:
